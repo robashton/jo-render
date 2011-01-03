@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoRender", "JoRender\JoRender.csproj", "{EB75A72A-9339-4CD2-B432-EE8F54236D73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoRender.Tests", "JoRender.Tests\JoRender.Tests.csproj", "{8E6C9105-3B1B-4D5B-AF25-772752BB987A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB75A72A-9339-4CD2-B432-EE8F54236D73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB75A72A-9339-4CD2-B432-EE8F54236D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB75A72A-9339-4CD2-B432-EE8F54236D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB75A72A-9339-4CD2-B432-EE8F54236D73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E6C9105-3B1B-4D5B-AF25-772752BB987A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E6C9105-3B1B-4D5B-AF25-772752BB987A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E6C9105-3B1B-4D5B-AF25-772752BB987A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E6C9105-3B1B-4D5B-AF25-772752BB987A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
