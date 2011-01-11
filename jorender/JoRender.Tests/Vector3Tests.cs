@@ -20,7 +20,7 @@ namespace JoRender.Tests
             Vector3 vectorTwo = new Vector3(2.0, 3.0, 4.0);
 
             // Act
-            Vector3 result = vectorOne.AddV(vectorTwo);
+            Vector3 result = vectorOne.Add(vectorTwo);
 
             // Assert
             Assert.AreEqual(3, result.X);
@@ -38,7 +38,7 @@ namespace JoRender.Tests
             double scalarOne = 2;
 
             // Act
-            Vector3 result = vectorOne.MultiplySV(scalarOne);
+            Vector3 result = vectorOne.Multiply(scalarOne);
 
             // Assert
             Assert.AreEqual(2, result.X);
