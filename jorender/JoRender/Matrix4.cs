@@ -72,8 +72,39 @@ namespace JoRender
 
         public Matrix4 Multiply(double Scalar)
         {
-            return new Matrix4(xx * Scalar, xy * Scalar, xz * Scalar, xw * Scalar, yx * Scalar, yy * Scalar, yz * Scalar, yw * Scalar, zx * Scalar, zy * Scalar, zz * Scalar, zw * Scalar, wx * Scalar, wy * Scalar, wz * Scalar, ww * Scalar);
+            return new Matrix4
+                (
+                    xx * Scalar, xy * Scalar, xz * Scalar, xw * Scalar, 
+                    yx * Scalar, yy * Scalar, yz * Scalar, yw * Scalar, 
+                    zx * Scalar, zy * Scalar, zz * Scalar, zw * Scalar, 
+                    wx * Scalar, wy * Scalar, wz * Scalar, ww * Scalar
+                );
         }
-        
+
+        public Matrix4 MultiplyM(Matrix4 other)
+        {
+            return new Matrix4
+                (
+                    ((xx * other.xx) + (xy * other.yx) + (xz * other.zx) + (xw * other.wx)),
+                    ((xx * other.xy) + (xy * other.yy) + (xz * other.zy) + (xw * other.wy)),
+                    ((xx * other.xz) + (xy * other.yz) + (xz * other.zz) + (xw * other.wz)),
+                    ((xx * other.xw) + (xy * other.yw) + (xz * other.zw) + (xw * other.ww)),
+
+                    ((yx * other.xx) + (yy * other.yx) + (yz * other.zx) + (yw * other.wx)),
+                    ((yx * other.xy) + (yy * other.yy) + (yz * other.zy) + (yw * other.wy)),
+                    ((yx * other.xz) + (yy * other.yz) + (yz * other.zz) + (yw * other.wz)),
+                    ((yx * other.xw) + (yy * other.yw) + (yz * other.zw) + (yw * other.ww)),
+
+                    ((zx * other.xx) + (zy * other.yx) + (zz * other.zx) + (zw * other.wx)),
+                    ((zx * other.xy) + (zy * other.yy) + (zz * other.zy) + (zw * other.wy)),
+                    ((zx * other.xz) + (zy * other.yz) + (zz * other.zz) + (zw * other.wz)),
+                    ((zx * other.xw) + (zy * other.yw) + (zz * other.zw) + (zw * other.ww)),
+
+                    ((wx * other.xx) + (wy * other.yx) + (wz * other.zx) + (ww * other.wx)),
+                    ((wx * other.xy) + (wy * other.yy) + (wz * other.zy) + (ww * other.wy)),
+                    ((wx * other.xz) + (wy * other.yz) + (wz * other.zz) + (ww * other.wz)),
+                    ((wx * other.xw) + (wy * other.yw) + (wz * other.zw) + (ww * other.ww))                
+                );
+        }
     }
 }
