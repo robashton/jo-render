@@ -68,5 +68,23 @@ namespace JoRender.Tests
         // Multiply two vectors - cross product
 
         // Multiply by a matrix
+
+        [Test]
+        public void When_Vector_Multiplied_With_A_Matrix_Vector_With_Result_Is_Returned()
+        {
+            //Arrange
+            Vector3 vectorOne = new Vector3(3.0, 2.0, 1.0);
+            Matrix4 matrixOne = new Matrix4(1.0, 2.0, 3.0, 4.0, 2.0, 3.0, 4.0, 1.0, 3.0, 4.0, 1.0, 2.0, 4.0, 1.0, 2.0, 3.0);
+
+            //Act
+            Vector3 result = vectorOne.MultiplyM(matrixOne);
+
+            //Assert
+            Assert.AreEqual(result.X, 14.0);
+            Assert.AreEqual(result.Y, 17.0);
+            Assert.AreEqual(result.Z, 20.0);
+        }
+
+       
     }
 }

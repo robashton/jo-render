@@ -37,5 +37,17 @@ namespace JoRender
             double result = ((x * other.x) + (y * other.y) + (z * other.z));
             return result;
         }
+
+        public Vector3 MultiplyM(Matrix4 other)
+        {
+            double w = 1.0;
+
+            return new Vector3
+                (
+                    ((x * other.XX) + (y * other.YX) + (z * other.ZX) + (w * other.WX)),  
+                    ((x * other.XY) + (y * other.YY) + (z * other.ZY) + (w * other.WY)), 
+                    ((x * other.XZ) + (y * other.YZ) + (z * other.ZZ) + (w * other.WZ))
+                );
+        }
     }
 }
