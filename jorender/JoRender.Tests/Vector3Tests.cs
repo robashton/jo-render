@@ -62,10 +62,25 @@ namespace JoRender.Tests
 
             //Assert
             Assert.AreEqual(20, result);
-
         }
 
         // Multiply two vectors - cross product
+
+        [Test]
+        public void When_Cross_Product_Multiplying_Two_Vectors_Vector_With_Result_Is_Returned()
+        {
+            //Arrange
+            Vector3 vectorOne = new Vector3(1.0, 2.0, 3.0);
+            Vector3 vectorTwo = new Vector3(2.0, 3.0, 4.0);
+
+            //Act
+            Vector3 result = vectorOne.MultiplyVcross(vectorTwo);
+
+            //Assert
+            Assert.AreEqual(-1.0, result.X);
+            Assert.AreEqual(2.0, result.Y);
+            Assert.AreEqual(-1.0, result.Z);
+        }
 
         // Multiply by a matrix
 
