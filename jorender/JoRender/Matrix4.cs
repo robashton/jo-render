@@ -158,5 +158,19 @@ namespace JoRender
                       ((xx * ((yy * zz) - (zy * yz))) - (yx * ((xy * zz) - (xz * zy))) + (zx * ((xy * yz) - (xz * yy))))
                 );
         }
+
+        public Matrix4 Inverse()
+        {
+            Matrix4 matrixOne = new Matrix4(xx, xy, xz, xw, yx, yy, yz, yw, zx, zy, zz, zw, wx, wy, wz, ww);
+
+            Matrix4 adjOne = matrixOne.Adjoint();
+
+            double detOne = matrixOne.Determinant();
+
+            return new Matrix4( adjOne.xx / detOne, adjOne.xy / detOne, adjOne.xz / detOne, adjOne.xw / detOne,
+                                adjOne.yx / detOne, adjOne.yy / detOne, adjOne.yz / detOne, adjOne.yw / detOne,
+                                adjOne.zx / detOne, adjOne.zy / detOne, adjOne.zz / detOne, adjOne.zw / detOne,
+                                adjOne.wx / detOne, adjOne.wy / detOne, adjOne.wz / detOne, adjOne.ww / detOne);
+        }
     }
 }
