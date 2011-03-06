@@ -74,11 +74,28 @@ namespace JoRender.Tests
         }
 
 
+        // Calculate determinant
 
-        // Create origin matrix
+        [Test]
+        public void When_Calculating_Determinant_Of_Matrix_Double_With_Result_Is_Returned()
+        {
+            //Arrange
+            Matrix4 matrixOne = new Matrix4(1.0, 2.0, 0.0, 3.0, 3.0, 2.0, 1.0, 2.0, 0.0, 0.0, 1.0, 1.0, 2.0, 1.0, 3.0, 3.0);
+
+            //Act
+            double result = matrixOne.Determinant();
+            
+            //Assert
+            Assert.AreEqual(0.0, result);
+        }
+
 
         // Calculate inverse
 
+
+        // Create origin matrix
+
+        
         // Calculate other crazy value shit
 
   

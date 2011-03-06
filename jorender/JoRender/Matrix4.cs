@@ -106,5 +106,18 @@ namespace JoRender
                     ((wx * other.xw) + (wy * other.yw) + (wz * other.zw) + (ww * other.ww))                
                 );
         }
+
+        public double Determinant()
+        {
+            double result = 
+                (
+                    (xx* ( (yy* ((zz*ww)-(wz*zw)) ) - (zy* ((yz*ww)-(yw*wz)) ) + (wy* ((yz*zw)-(yw*zz)) ) ) ) - 
+                    (yx* ( (xy* ((zz*ww)-(wz*zw)) ) - (zy* ((xz*ww)-(xw*wz)) ) + (wy* ((xz*zw)-(xw*zz)) ) ) ) + 
+                    (zx* ( (xy* ((yz*ww)-(wz*yw)) ) - (yy* ((xz*ww)-(xw*wz)) ) + (wy* ((xz*yw)-(xw*yz)) ) ) ) - 
+                    (wx* ( (xy* ((yz*zw)-(zz*yw)) ) - (yy* ((xz*zw)-(xw*zz)) ) + (zy* ((xz*yw)-(xw*yz)) ) ) ) 
+                );
+
+            return result;
+        }
     }
 }
