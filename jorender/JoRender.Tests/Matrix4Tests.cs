@@ -52,7 +52,7 @@ namespace JoRender.Tests
             Matrix4 matrixTwo = new Matrix4(1.0, 2.0, 5.0, 3.0, 3.0, 5.0, 4.0, 1.0, 1.0, 3.0, 2.0, 4.0, 2.0, 4.0, 1.0, 5.0);
 
             //Act
-            Matrix4 result = matrixOne.MultiplyM(matrixTwo);         
+            Matrix4 result = matrixOne.Multiply(matrixTwo);         
           
             //Assert
             Assert.AreEqual(18.0, result.XX);

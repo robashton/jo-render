@@ -32,13 +32,13 @@ namespace JoRender
             return new Vector3(x * scalar, y * scalar, z * scalar);
         }
 
-        public double MultiplyVdot(Vector3 other)
+        public double DotProduct(Vector3 other)
         {
             double result = ((x * other.x) + (y * other.y) + (z * other.z));
             return result;
         }
 
-        public Vector3 MultiplyVcross(Vector3 other)
+        public Vector3 CrossProduct(Vector3 other)
         {
             return new Vector3
             (
@@ -48,7 +48,7 @@ namespace JoRender
             );
         }
 
-        public Vector3 MultiplyM(Matrix4 other)
+        public Vector3 Multiply(Matrix4 other)
         {
             double w = 1.0;
 

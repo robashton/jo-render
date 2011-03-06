@@ -58,7 +58,7 @@ namespace JoRender.Tests
             Vector3 vectorTwo = new Vector3(2.0, 3.0, 4.0);
 
             //Act
-            double result = vectorOne.MultiplyVdot(vectorTwo);
+            double result = vectorOne.DotProduct(vectorTwo);
 
             //Assert
             Assert.AreEqual(20, result);
@@ -74,7 +74,7 @@ namespace JoRender.Tests
             Vector3 vectorTwo = new Vector3(2.0, 3.0, 4.0);
 
             //Act
-            Vector3 result = vectorOne.MultiplyVcross(vectorTwo);
+            Vector3 result = vectorOne.CrossProduct(vectorTwo);
 
             //Assert
             Assert.AreEqual(-1.0, result.X);
@@ -92,7 +92,7 @@ namespace JoRender.Tests
             Matrix4 matrixOne = new Matrix4(1.0, 2.0, 3.0, 4.0, 2.0, 3.0, 4.0, 1.0, 3.0, 4.0, 1.0, 2.0, 4.0, 1.0, 2.0, 3.0);
 
             //Act
-            Vector3 result = vectorOne.MultiplyM(matrixOne);
+            Vector3 result = vectorOne.Multiply(matrixOne);
 
             //Assert
             Assert.AreEqual(result.X, 14.0);

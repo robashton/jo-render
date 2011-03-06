@@ -81,7 +81,7 @@ namespace JoRender
                 );
         }
 
-        public Matrix4 MultiplyM(Matrix4 other)
+        public Matrix4 Multiply(Matrix4 other)
         {
             return new Matrix4
                 (
