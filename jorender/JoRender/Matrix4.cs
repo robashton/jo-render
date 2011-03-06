@@ -119,5 +119,44 @@ namespace JoRender
 
             return result;
         }
+
+        public Matrix4 Adjoint()
+        {
+            return new Matrix4
+                (
+                //xx
+                      ( (yy* ((zz*ww)-(wz*zw)) ) - (zy* ((yz*ww)-(yw*wz)) ) + (wy* ((yz*zw)-(yw*zz)) ) ),
+                //xy (from yx)
+                    - ( (xy* ((zz*ww)-(wz*zw)) ) - (zy* ((xz*ww)-(xw*wz)) ) + (wy* ((xz*zw)-(xw*zz)) ) ),
+                //xz (from yz)
+                      ((xy * ((yz * ww) - (wz * yw))) - (yy * ((xz * ww) - (xw * wz))) + (wy * ((xz * yw) - (xw * yz)))), 
+                //xw (from wx)
+                    - ((xy * ((yz * zw) - (zz * yw))) - (yy * ((xz * zw) - (xw * zz))) + (zy * ((xz * yw) - (xw * yz)))),
+                //yx (from xy)
+                    - ((yx * ((zz * ww) - (wz * zw))) - (zx * ((yz * ww) - (yw * wz))) + (wx * ((yz * zw) - (yw * zz)))),
+                //yy
+                      ((xx * ((zz * ww) - (wz * zw))) - (zx * ((xz * ww) - (xw * wz))) + (wx * ((xz * zw) - (xw * zz)))),
+                //yz (from zy)
+                    - ((xx * ((yz * ww) - (wz * yw))) - (yx * ((xz * ww) - (xw * wz))) + (wx * ((xz * yw) - (xw * yz)))),
+                //yw (from wy)
+                      ((xx * ((yz * zw) - (zz * yw))) - (yx * ((xz * zw) - (xw * zz))) + (zx * ((xz * yw) - (xw * yz)))),
+                //zx (from xz)
+                      ((yx * ((zy * ww) - (wy * zw))) - (zx * ((yy * ww) - (yw * wy))) + (wx * ((yy * zw) - (yw * zy)))),
+                //zy (from yz)
+                    - ((xx * ((zy * ww) - (wy * zw))) - (zx * ((xy * ww) - (xw * wy))) + (wx * ((xy * zw) - (xw * zy)))),
+                //zz
+                      ((xx * ((yy * ww) - (wy * yw))) - (yx * ((xy * ww) - (xw * wy))) + (wx * ((xy * yw) - (xw * yy)))),
+                //zw (from wz)
+                    - ((xx * ((yy * zw) - (zy * yw))) - (yx * ((xy * zw) - (xw * zy))) + (zx * ((xy * yw) - (xw * yy)))),
+                //wx (from xw)
+                    - ((yx * ((zy * wz) - (wy * zz))) - (zx * ((yy * wz) - (yz * wy))) + (wx * ((yy * zz) - (yz * zy)))),
+                //wy (from yw)
+                      ((xx * ((zy * wz) - (wy * zz))) - (zx * ((xy * wz) - (xz * wy))) + (wx * ((xy * zz) - (xz * zy)))),
+                //wz (from zw)
+                    - ((xx * ((yy * wz) - (wy * yz))) - (yx * ((xy * wz) - (xz * wy))) + (wx * ((xy * yz) - (xz * yy)))),
+                //ww
+                      ((xx * ((yy * zz) - (zy * yz))) - (yx * ((xy * zz) - (xz * zy))) + (zx * ((xy * yz) - (xz * yy))))
+                );
+        }
     }
 }

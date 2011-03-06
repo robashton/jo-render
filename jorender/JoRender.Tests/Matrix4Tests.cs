@@ -80,15 +80,44 @@ namespace JoRender.Tests
         public void When_Calculating_Determinant_Of_Matrix_Double_With_Result_Is_Returned()
         {
             //Arrange
-            Matrix4 matrixOne = new Matrix4(1.0, 2.0, 0.0, 3.0, 3.0, 2.0, 1.0, 2.0, 0.0, 0.0, 1.0, 1.0, 2.0, 1.0, 3.0, 3.0);
+            Matrix4 matrixOne = new Matrix4(1.0, 2.0, 0.0, 3.0, 3.0, 2.0, 1.0, 2.0, 1.0, 0.0, 1.0, 1.0, 2.0, 1.0, 3.0, 3.0);
 
             //Act
             double result = matrixOne.Determinant();
             
             //Assert
-            Assert.AreEqual(0.0, result);
+            Assert.AreEqual(9.0, result);
         }
 
+        //Calculate adjoint
+
+        [Test]
+        public void When_Calculating_Adjoint_Of_Matrix_Matrix_With_Result_Is_Returned()
+        {
+            //Arrange
+            Matrix4 matrixOne = new Matrix4(1.0, 2.0, 0.0, 3.0, 3.0, 2.0, 1.0, 2.0, 1.0, 0.0, 1.0, 1.0, 2.0, 1.0, 3.0, 3.0);
+
+            //Act
+            Matrix4 result = matrixOne.Adjoint();
+
+            //Assert
+            Assert.AreEqual(-1.0, result.XX);
+            Assert.AreEqual(3.0, result.XY);
+            Assert.AreEqual(9.0, result.XZ);
+            Assert.AreEqual(-4.0, result.XW);
+            Assert.AreEqual(-1.0, result.YX);
+            Assert.AreEqual(3.0, result.YY);
+            Assert.AreEqual(-18.0, result.YZ);
+            Assert.AreEqual(5.0, result.YW);
+            Assert.AreEqual(-3.0, result.ZX);
+            Assert.AreEqual(0.0, result.ZY);
+            Assert.AreEqual(-9.0, result.ZZ);
+            Assert.AreEqual(6.0, result.ZW);
+            Assert.AreEqual(4.0, result.WX);
+            Assert.AreEqual(-3.0, result.WY);
+            Assert.AreEqual(9.0, result.WZ);
+            Assert.AreEqual(-2.0, result.WW);
+        }
 
         // Calculate inverse
 
