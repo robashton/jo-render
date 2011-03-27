@@ -150,7 +150,36 @@ namespace JoRender.Tests
         }
 
 
-        // Create origin matrix
+        // Create identity matrix
+
+        [Test]
+        public void An_Identity_Matrix_Is_Returned()
+        {
+            //Arrange
+
+            //Act
+            Matrix4 result = Matrix4.Identity();
+
+            //Assert
+
+            Assert.AreEqual(1.0, result.XX);
+            Assert.AreEqual(0.0, result.XY);
+            Assert.AreEqual(0.0, result.XZ);
+            Assert.AreEqual(0.0, result.XW);
+            Assert.AreEqual(0.0, result.YX);
+            Assert.AreEqual(1.0, result.YY);
+            Assert.AreEqual(0.0, result.YZ);
+            Assert.AreEqual(0.0, result.YW);
+            Assert.AreEqual(0.0, result.ZX);
+            Assert.AreEqual(0.0, result.ZY);
+            Assert.AreEqual(1.0, result.ZZ);
+            Assert.AreEqual(0.0, result.ZW);
+            Assert.AreEqual(0.0, result.WX);
+            Assert.AreEqual(0.0, result.WY);
+            Assert.AreEqual(0.0, result.WZ);
+            Assert.AreEqual(1.0, result.WW);
+
+        }
 
         
         // Calculate other crazy value shit

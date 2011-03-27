@@ -172,5 +172,11 @@ namespace JoRender
                                 adjOne.zx / detOne, adjOne.zy / detOne, adjOne.zz / detOne, adjOne.zw / detOne,
                                 adjOne.wx / detOne, adjOne.wy / detOne, adjOne.wz / detOne, adjOne.ww / detOne);
         }
+
+
+        public static Matrix4 Identity()
+        {
+            return new Matrix4(1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+        }
     }
 }
